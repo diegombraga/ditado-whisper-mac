@@ -77,6 +77,7 @@ curl -L -o ~/Library/Application\ Support/whisper-dictation/models/ggml-large-v3
 5. Adicione ao seu `~/.hammerspoon/init.lua`:
    ```lua
    require("hs.ipc")
+   hs.autoLaunch(true)  -- abre o Hammerspoon sozinho ao ligar o Mac
    require("whisper_dictation").start()
    ```
 6. Abra o Hammerspoon e faça os **3 passos manuais** acima.
@@ -114,6 +115,7 @@ Ou na mão: remova `~/.hammerspoon/whisper_dictation.lua`, a linha do `require` 
 - **Abre o Ditado da Apple junto** → falta desligar o atalho do Ditado (passo 3).
 - **Cola texto errado / vazio ("Obrigado.")** → gravação em silêncio; é uma "alucinação" conhecida do Whisper em áudio mudo. Fale antes de parar.
 - **Disparando sem querer ao digitar** → aumente `DOUBLE_TAP_WINDOW` para `0.3`, ou troque o gatilho.
+- **Parou de funcionar depois de reiniciar o Mac** → o Hammerspoon precisa abrir no login. A config já chama `hs.autoLaunch(true)`; se ainda assim não abrir, ative em *Hammerspoon ▸ Preferences ▸ Launch Hammerspoon at login*.
 
 ---
 

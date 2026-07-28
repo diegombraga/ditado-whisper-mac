@@ -189,6 +189,7 @@ else
 
 -- Ditado por voz local (Whisper) — Ctrl-Ctrl
 require("hs.ipc")
+hs.autoLaunch(true)  -- abre o Hammerspoon sozinho ao ligar o Mac
 local __whisper_dictation = require("whisper_dictation")
 __whisper_dictation.start()
 INITLUA
